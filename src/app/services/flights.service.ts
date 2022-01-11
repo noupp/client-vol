@@ -28,7 +28,7 @@ export class FlightsService {
   getFlight(id: number): Observable<Flight> {
     return this.http
       .get<Flight>(`${this.apiUrl}/${id}`)
-      .pipe(catchError(this.handleError<Flight>('getFligt')));
+      .pipe(catchError(this.handleError<Flight>('getFlight')));
   }
 
   /**

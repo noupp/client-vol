@@ -35,6 +35,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FlightsComponent } from './pages/flights/flights.component';
 import { HttpClientModule } from '@angular/common/http';
+import {FlexModule} from "@angular/flex-layout";
 
 const materialModules = [
   CdkTreeModule,
@@ -74,12 +75,13 @@ const materialModules = [
     ToolbarMenuComponent,
     FlightsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    materialModules,
-    HttpClientModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        materialModules,
+        HttpClientModule,
+        FlexModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
