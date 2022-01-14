@@ -13,7 +13,7 @@ import { Place } from "../objets/place";
  */
 export class PlacesService {
 
-  private apiUrl = 'http://localhost:4200/places';
+  private apiUrl = '/api/places';
 
   constructor(private http: HttpClient) {}
 

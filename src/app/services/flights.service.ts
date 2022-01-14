@@ -13,7 +13,7 @@ import { Flight } from "../objets/flight";
  */
 export class FlightsService {
 
-  private apiUrl = 'http://localhost:4200/flights';
+  private apiUrl = '/api/flights';
 
   constructor(private http: HttpClient) {}
 

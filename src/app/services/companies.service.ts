@@ -13,7 +13,7 @@ import { catchError } from 'rxjs/operators';
  */
 export class CompaniesService {
 
-  private apiUrl = 'http://localhost:4200/companies';
+  private apiUrl = '/api/companies';
 
   constructor(private http: HttpClient) {}
 
