@@ -3,6 +3,7 @@ import { Observable, of } from "rxjs";
 import { Company } from "../objets/company";
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs/operators';
+import { Flight } from "../objets/flight";
 
 @Injectable({
   providedIn: 'root',
@@ -31,6 +32,13 @@ export class CompaniesService {
       .pipe(catchError(this.handleError<Company>('getCompany')));
   }
 
+  /** GET all flights of one company in a JSONFile from API */
+  getAllFlightsFromCompany(name: string): Observable<Flight[]>{
+    return this.http
+      .get<Flight[]>(`${this.apiUrl}/${name}/flights`)
+      .pipe(catchError(this.handleError<Flight[]>('getAllFlightsFromCompany')));
+  }
+  
   /**
    * Handle error
    * @return the error catched

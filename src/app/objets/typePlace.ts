@@ -1,5 +1,5 @@
 export enum TypePlace {
-  FirstClass,
-  BusinessClass,
-  EconomyClass
+  FirstClass = "Firstclass",
+  BusinessClass = "BusinessClass",
+  EconomyClass = "EconomyClass"
 }

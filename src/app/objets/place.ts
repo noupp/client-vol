@@ -1,7 +1,5 @@
-import { TypePlace } from "./typePlace";
-
 export interface Place {
   id : number;
-  typePlace : TypePlace;
+  placeType : string;
   price : number;
 }
