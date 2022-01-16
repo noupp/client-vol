@@ -35,10 +35,13 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FlightsComponent } from './pages/flights/flights.component';
 import { HttpClientModule } from '@angular/common/http';
-import {FlexModule} from "@angular/flex-layout";
+import { FlexModule } from "@angular/flex-layout";
+import { TableComponent } from './components/table/table.component';
+import { CdkTableModule } from '@angular/cdk/table';
 
 const materialModules = [
   CdkTreeModule,
+  CdkTableModule,
   MatAutocompleteModule,
   MatButtonModule,
   MatCardModule,
@@ -74,6 +77,7 @@ const materialModules = [
     HomeComponent,
     ToolbarMenuComponent,
     FlightsComponent,
+    TableComponent,
   ],
     imports: [
         BrowserModule,
