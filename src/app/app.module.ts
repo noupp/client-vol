@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexModule } from "@angular/flex-layout";
 import { TableComponent } from './components/table/table.component';
 import { CdkTableModule } from '@angular/cdk/table';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { initializer } from './initializer.service';
 
 const materialModules = [
   CdkTreeModule,
@@ -85,8 +87,16 @@ const materialModules = [
         materialModules,
         HttpClientModule,
         FlexModule,
+        KeycloakAngularModule
     ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      multi: true,
+      deps: [KeycloakService]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
