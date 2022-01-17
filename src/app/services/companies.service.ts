@@ -14,7 +14,7 @@ import { Flight } from "../objets/flight";
  */
 export class CompaniesService {
 
-  private apiUrl = '/api/companies';
+  private apiUrl = '/api/api-rest-vol-keycloak/companies';
 
   constructor(private http: HttpClient) {}
 

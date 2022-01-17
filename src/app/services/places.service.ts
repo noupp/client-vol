@@ -13,7 +13,7 @@ import { Place } from "../objets/place";
  */
 export class PlacesService {
 
-  private apiUrl = '/api/places';
+  private apiUrl = '/api/api-rest-vol-keycloak/places';
 
   constructor(private http: HttpClient) {}
 
