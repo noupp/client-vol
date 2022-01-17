@@ -6,4 +6,5 @@ export interface Flight {
   destination: string;
   departure: string;
   places: Place[];
+  highlighted?: boolean;
 }

@@ -38,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexModule } from "@angular/flex-layout";
 import { TableComponent } from './components/table/table.component';
 import { CdkTableModule } from '@angular/cdk/table';
+import { PlacesComponent } from './pages/places/places.component';
 
 const materialModules = [
   CdkTreeModule,
@@ -78,14 +79,15 @@ const materialModules = [
     ToolbarMenuComponent,
     FlightsComponent,
     TableComponent,
+    PlacesComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        materialModules,
-        HttpClientModule,
-        FlexModule,
-    ],
+  imports: [
+      BrowserModule,
+      AppRoutingModule,
+      materialModules,
+      HttpClientModule,
+      FlexModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

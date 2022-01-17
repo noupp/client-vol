@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { Flight } from 'src/app/objets/flight';
 
 @Component({
@@ -12,15 +13,21 @@ export class TableComponent implements OnInit {
   displayedColumns: string[] = ['id', 'departure', 'destination', 'date'];
   selectedFlight: Flight | undefined;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
-    console.log(this.data);
+
   }
 
+  highlight(element: Flight) {
+     element.highlighted = !element.highlighted;
+     console.log(element.highlighted);
+  }
   //Sélection de l'utilisateur dans la liste
   onSelect(flight: Flight): void {
     this.selectedFlight = flight;
-    //this.store.setSelectedUser(this.selectedUser);
+    this.router.navigate(['flights', flight.id, 'places']);
   }
 }
