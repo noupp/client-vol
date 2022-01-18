@@ -1,4 +1,17 @@
-<p>places works!</p>
-<!-- afficher les infos du vol
-afficher avec une boucle for des boutons avec le numéro de la place
--->
+<mat-card *ngIf="currentFlight">
+  <mat-card-title> Vol n° {{ currentFlight.id }} du {{ currentFlight.date }}</mat-card-title>
+  <mat-card-subtitle>Départ de {{ currentFlight.departure }} et à destination de {{ currentFlight.destination }}</mat-card-subtitle>
+  <section>
+    <div class="places" *ngIf="places">
+      <ng-container *ngFor="let place of places">
+        <button mat-fab color="primary" (click)="setSelectedPlace(place)">
+          {{ place.id }}
+        </button>
+      </ng-container>
+    </div>
+  </section>
+</mat-card>
+<mat-card class="place" *ngIf="selectedPlace">
+  <mat-card-title> Place n° {{ selectedPlace.id }}</mat-card-title>
+  <mat-card-subtitle>Prix : {{ selectedPlace.price }} €</mat-card-subtitle>
+</mat-card>

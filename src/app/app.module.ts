@@ -39,6 +39,7 @@ import { FlexModule } from "@angular/flex-layout";
 import { TableComponent } from './components/table/table.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { PlacesComponent } from './pages/places/places.component';
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 
 const materialModules = [
   CdkTreeModule,
@@ -83,6 +84,7 @@ const materialModules = [
   ],
   imports: [
       BrowserModule,
+      NoopAnimationsModule,
       AppRoutingModule,
       materialModules,
       HttpClientModule,
