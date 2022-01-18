@@ -40,6 +40,8 @@ import { TableComponent } from './components/table/table.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { initializer } from './initializer.service';
+import { PlacesComponent } from './pages/places/places.component';
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 
 const materialModules = [
   CdkTreeModule,
@@ -80,15 +82,17 @@ const materialModules = [
     ToolbarMenuComponent,
     FlightsComponent,
     TableComponent,
+    PlacesComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        materialModules,
-        HttpClientModule,
-        FlexModule,
-        KeycloakAngularModule
-    ],
+  imports: [
+      BrowserModule,
+      NoopAnimationsModule,
+      AppRoutingModule,
+      materialModules,
+      HttpClientModule,
+      FlexModule,
+      KeycloakAngularModule
+  ],
   providers: [
     {
       provide: APP_INITIALIZER,

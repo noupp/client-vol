@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { Route, Router } from '@angular/router';
 import { Flight } from 'src/app/objets/flight';
 
 @Component({
@@ -10,20 +10,24 @@ import { Flight } from 'src/app/objets/flight';
 export class TableComponent implements OnInit {
 
   @Input() data: Flight[] = [];
-  dataSource: MatTableDataSource<Flight> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'departure', 'destination', 'date'];
   selectedFlight: Flight | undefined;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.data);
-    console.log(this.dataSource);
+
   }
 
+  highlight(element: Flight) {
+     element.highlighted = !element.highlighted;
+     console.log(element.highlighted);
+  }
   //Sélection de l'utilisateur dans la liste
   onSelect(flight: Flight): void {
     this.selectedFlight = flight;
-    //this.store.setSelectedUser(this.selectedUser);
+    this.router.navigate(['flights', flight.id, 'places']);
   }
 }

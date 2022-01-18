@@ -6,6 +6,7 @@ import { from } from 'rxjs';
 import { Company } from 'src/app/objets/company';
 import { Place } from 'src/app/objets/place';
 import { CompaniesService } from 'src/app/services/companies.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-flights',
@@ -15,8 +16,8 @@ import { CompaniesService } from 'src/app/services/companies.service';
 export class FlightsComponent implements OnInit {
 
   companies: Company[] = [];
-  currentFlights: Flight[] = [];
-  displayedColumns: string[] = ['id', 'departure', 'destination', 'date'];
+  disableSelect = new FormControl(false);
+  selectedCompany!: Company;
 
   constructor(
     private flightsService : FlightsService,
@@ -41,7 +42,6 @@ export class FlightsComponent implements OnInit {
         }
       }
     );
-
   }
 
   getPlacesFromFlight(id : number) : Place[]{
@@ -74,9 +74,7 @@ export class FlightsComponent implements OnInit {
       return flights;
   }
 
-  setCurrentFlights(company : Company): boolean {
-    this.currentFlights = company.flights;
-    console.log(this.currentFlights);
-    return true;
+  setSelectedCompany(company : Company){
+    this.selectedCompany = company;
   }
 }

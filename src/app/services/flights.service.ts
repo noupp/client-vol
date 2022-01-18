@@ -26,7 +26,7 @@ export class FlightsService {
   }
 
   /** GET one company by name in a JSONFile from API */
-  getFlight(id: number): Observable<Flight> {
+  getFlight(id: any): Observable<Flight> {
     return this.http
       .get<Flight>(`${this.apiUrl}/${id}`)
       .pipe(catchError(this.handleError<Flight>('getFlight')));
