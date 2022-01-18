@@ -1,0 +1,35 @@
+<table *ngIf="data.length > 0" mat-table [dataSource]="data" class="mat-elevation-z8">
+  <!-- ID -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let flight"> {{ flight.id }} </td>
+  </ng-container>
+
+  <!-- Departure -->
+  <ng-container matColumnDef="departure">
+    <th mat-header-cell *matHeaderCellDef> Departure </th>
+    <td mat-cell *matCellDef="let flight"> {{ flight.departure }} </td>
+  </ng-container>
+
+  <!-- Destination -->
+  <ng-container matColumnDef="destination">
+    <th mat-header-cell *matHeaderCellDef> Destination </th>
+    <td mat-cell *matCellDef="let flight"> {{ flight.destination }} </td>
+  </ng-container>
+
+  <!-- Date -->
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef> Date </th>
+    <td mat-cell *matCellDef="let flight"> {{ flight.date }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{hovered: row.hovered, highlighted: row.highlighted}"
+  (click)="onSelect(row)" (mouseover)="row.hovered = true" (mouseout)="row.hovered = false"></tr>
+</table>
+<mat-paginator #paginator
+  [length]="data.length"
+  [pageIndex]="0"
+  [pageSize]="10"
+  [pageSizeOptions]="[10, 50, 100, 250]">
+</mat-paginator>

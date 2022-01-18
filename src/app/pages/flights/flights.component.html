@@ -1,0 +1,15 @@
+<div class="page">
+  <div class="company">
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a company</mat-label>
+      <mat-select [disabled]="disableSelect.value">
+        <mat-option value="{{ company.name }}" *ngFor="let company of companies" (click)="setSelectedCompany(company)"> {{ company.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="flights" *ngIf="selectedCompany">
+    <div class="content" fxLayout="row wrap" fxLayoutGap="16px">
+      <app-table [data]="selectedCompany.flights"></app-table>
+    </div>
+  </div>
+</div>
