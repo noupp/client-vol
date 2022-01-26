@@ -1,5 +1,5 @@
 {
-    "/api/api-rest-vol-keycloak/*": {
+    "/api/api-rest-vol/*": {
         "target": "http://localhost:8080",
         "secure": false,
         "logLevel": "debug",

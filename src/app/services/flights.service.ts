@@ -14,7 +14,7 @@ import { Place } from "../objets/place";
  */
 export class FlightsService {
 
-  private apiUrl = '/api/api-rest-vol-keycloak/flights';
+  private apiUrl = '/api/api-rest-vol/flights';
 
   constructor(private http: HttpClient) {}
 
