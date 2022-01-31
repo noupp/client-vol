@@ -1,8 +1,8 @@
 export const environment = {
-  production: true,
+  production: false,
   keycloak: {
     issuer: 'http://localhost:8081/auth/',
-    realm: 'api-rest-vol-keycloak',
+    realm: 'reservation-vol',
     clientId: 'client-vol-ui',
     redirectUri: 'http://localhost:4200/'
   }
